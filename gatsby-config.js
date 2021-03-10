@@ -5,6 +5,12 @@ module.exports = {
     title: 'posters-ui',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: 'https://example.com/graphql',
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-root-import',
