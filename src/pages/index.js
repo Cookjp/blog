@@ -1,13 +1,15 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import LayoutProvider from 'Components/layout/provider';
 import Home from './Home';
-// styles
 
 // markup
 const IndexPage = () => (
-  <Router>
-    <Home path="/" />
-  </Router>
+  <LayoutProvider>
+    <Router>
+      <Home path="/" />
+    </Router>
+  </LayoutProvider>
 );
 
 export default IndexPage;

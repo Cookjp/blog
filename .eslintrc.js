@@ -40,6 +40,7 @@ module.exports = {
           ['src', './src'],
           ['Pages', './src/pages'],
           ['Graphql', './src/graphql'],
+          ['Components', './src/components'],
         ],
         extensions: ['.js', '.jsx'],
       },
