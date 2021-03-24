@@ -1,30 +1,13 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import { gql, useQuery } from '@apollo/client';
-import client from 'Graphql/Apollo';
-
+import { Router } from '@reach/router';
+import Home from './Home';
 // styles
 
-const message = gql`
- query {
-   prints {
-    id
-    description
-    dateAdded
-    sales
-  }
-}
-`;
-
 // markup
-const IndexPage = () => {
-  const { loading, error, data } = useQuery(message, { client });
-
-  const post = () => {
-    console.log(loading, error, data);
-  };
-
-  return (<Button variant="contained" onClick={post}>Click Me</Button>);
-};
+const IndexPage = () => (
+  <Router>
+    <Home path="/" />
+  </Router>
+);
 
 export default IndexPage;
