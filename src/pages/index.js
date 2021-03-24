@@ -1,17 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router } from '@reach/router';
 import Home from './Home';
 // styles
 
 // markup
 const IndexPage = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+  <Router>
+    <Home path="/" />
+  </Router>
 );
 
 export default IndexPage;
