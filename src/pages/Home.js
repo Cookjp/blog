@@ -1,21 +1,29 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import Intro from '../components/Intro';
 
-const Home = () => (
-  <Grid
-    container
-    justify="space-evenly"
-    alignItems="center"
-  >
-    <Grid item xs={6}>
-      <Intro />
-    </Grid>
-    <Grid item xs={6}>
-      <Intro />
-    </Grid>
+const useStyles = makeStyles((theme) => ({
+  main: {
+    paddingTop: theme.spacing(20),
+  },
+}));
 
-  </Grid>
-);
+const Home = () => {
+  const classes = useStyles();
+  return (
+    <Grid
+      container
+      justify="space-evenly"
+      alignItems="center"
+      className={classes.main}
+    >
+      <Grid item xs={6}>
+        <Intro />
+      </Grid>
+      <Grid item xs={6} />
+
+    </Grid>
+  );
+};
 
 export default Home;

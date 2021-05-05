@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    paddingLeft: theme.spacing(5),
+    paddingLeft: theme.spacing(20),
+    paddingRight: theme.spacing(20),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -100,7 +101,7 @@ const MobileBar = () => {
             orientation="vertical"
             style={{ width: '2%' }}
           />
-          <Typography variant="h6" noWrap>
+          <Typography variant="h5" noWrap>
             James Cook
           </Typography>
           <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
