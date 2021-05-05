@@ -1,15 +1,19 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import LayoutProvider from 'Components/layout/provider';
+import AppBar from 'Components/AppBar';
+import ThemeProvider, { FancyBorder } from 'Components/layout/ThemeProvider';
 import Home from './Home';
 
 // markup
-const IndexPage = () => (
-  <LayoutProvider>
-    <Router>
-      <Home path="/" />
-    </Router>
-  </LayoutProvider>
+const Index = () => (
+  <ThemeProvider>
+    <AppBar />
+    <FancyBorder>
+      <Router>
+        <Home path="/" />
+      </Router>
+    </FancyBorder>
+  </ThemeProvider>
 );
 
-export default IndexPage;
+export default Index;
