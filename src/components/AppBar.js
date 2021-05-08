@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    paddingLeft: theme.spacing(20),
-    paddingRight: theme.spacing(20),
+    paddingLeft: '6%',
+    paddingRight: '6%',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -105,7 +105,7 @@ const MobileBar = () => {
             James Cook
           </Typography>
           <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
-            <Brightness3Icon color="black" />
+            <Brightness3Icon />
           </IconButton>
         </Toolbar>
       </MuiAppBar>
@@ -125,7 +125,7 @@ const MobileBar = () => {
         </div>
         <Divider />
         <List>
-          {titles.map((text, index) => (
+          {titles.map((text) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
@@ -157,7 +157,7 @@ const DesktopBar = () => {
             ))}
           </div>
           <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
-            <Brightness3Icon color="black" />
+            <Brightness3Icon />
           </IconButton>
         </Toolbar>
       </MuiAppBar>

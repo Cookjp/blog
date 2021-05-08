@@ -19,11 +19,11 @@ const theme = createMuiTheme({
 
 export const FancyBorder = ({ children }) => (
   <Grid container justify="space-between">
-    <Grid item xs={0} sm={2} />
+    <Grid item sm={2} />
     <Grid item xs={12} sm={8}>
       {children}
     </Grid>
-    <Grid item xs={0} sm={2} />
+    <Grid item sm={2} />
   </Grid>
 );
 
