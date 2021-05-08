@@ -18,6 +18,7 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         Pages: path.join(__dirname, 'src/pages'),
         Graphql: path.join(__dirname, 'src/graphql'),
+        Components: path.join(__dirname, 'src/components'),
       },
     },
   ],

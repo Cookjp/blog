@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    "jest/globals": true,
   },
   extends: [
     'airbnb',
@@ -41,6 +40,7 @@ module.exports = {
           ['src', './src'],
           ['Pages', './src/pages'],
           ['Graphql', './src/graphql'],
+          ['Components', './src/components'],
         ],
         extensions: ['.js', '.jsx'],
       },

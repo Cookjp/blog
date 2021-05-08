@@ -1,13 +1,19 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import AppBar from 'Components/AppBar';
+import ThemeProvider, { FancyBorder } from 'Components/layout/ThemeProvider';
 import Home from './Home';
-// styles
 
 // markup
-const IndexPage = () => (
-  <Router>
-    <Home path="/" />
-  </Router>
+const Index = () => (
+  <ThemeProvider>
+    <AppBar />
+    <FancyBorder>
+      <Router>
+        <Home path="/" />
+      </Router>
+    </FancyBorder>
+  </ThemeProvider>
 );
 
-export default IndexPage;
+export default Index;
