@@ -39,8 +39,6 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
     justifyContent: 'space-evenly',
   },
-  appBarNavItem: {
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -151,7 +149,7 @@ const DesktopBar = () => {
           </Typography>
           <div className={classes.appBarNav}>
             {titles.map((text) => (
-              <Typography variant="h6" className={classes.appBarNavItem} key={text}>
+              <Typography variant="h6" key={text}>
                 {text}
               </Typography>
             ))}
