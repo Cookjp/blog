@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { postType } from 'Types';
+import { Link } from 'gatsby';
 import PostCard from './PostCard';
 
 const useStyles = makeStyles((theme) => ({
@@ -52,9 +53,11 @@ const PostList = ({ posts }) => {
             <YearHeading date={new Date(post.node.frontmatter.date).getFullYear()} />
           )
           : null}
-        <div className={classes.post}>
-          <PostCard post={post.node} />
-        </div>
+        <Link to={post.node.frontmatter.slug} style={{ textDecoration: 'none' }}>
+          <div className={classes.post}>
+            <PostCard post={post.node} />
+          </div>
+        </Link>
       </div>
     );
   };

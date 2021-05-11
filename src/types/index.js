@@ -7,6 +7,7 @@ export const postType = shape({
   node: shape({
     id: string.isRequired,
     timeToRead: number,
+    html: string,
     frontmatter: shape({
       title: string.isRequired,
       tags: arrayOf(string),
