@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import {
   shape, string, number, arrayOf,
 } from 'prop-types';
