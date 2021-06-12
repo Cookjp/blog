@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'posters-ui',
+    title: 'James Cook Blog',
+    description: 'Software development and personal blog',
   },
   plugins: [
     {
@@ -11,6 +12,14 @@ module.exports = {
         uri: 'https://example.com/graphql',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown',
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-root-import',
@@ -19,6 +28,7 @@ module.exports = {
         Pages: path.join(__dirname, 'src/pages'),
         Graphql: path.join(__dirname, 'src/graphql'),
         Components: path.join(__dirname, 'src/components'),
+        Types: path.join(__dirname, 'src/types'),
       },
     },
   ],

@@ -1,12 +1,14 @@
-import { Divider, makeStyles, Typography } from '@material-ui/core';
+import {
+  Box, Divider, makeStyles, Typography,
+} from '@material-ui/core';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    paddingTop: theme.spacing(20),
-  },
   divider: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     backgroundColor: theme.palette.primary.main,
+    width: '60%',
   },
 }));
 
@@ -18,14 +20,16 @@ const Intro = () => {
         Hi, I&apos;m
       </Typography>
       <Typography variant="h2">
-        James Cook
+        <Box fontWeight="fontWeightBold">
+          James Cook
+        </Box>
       </Typography>
       <Divider className={classes.divider} />
       <Typography variant="h6">
         and I&apos;m a
       </Typography>
       <Typography variant="h3">
-        Software Developer
+        Software Developer.
       </Typography>
       <Typography variant="h6">
         I like to write about software engineering, personal development

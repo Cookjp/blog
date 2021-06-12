@@ -1,9 +1,9 @@
 {
-  "name": "posters-ui",
+  "name": "blog",
   "version": "1.0.0",
   "private": true,
-  "description": "posters-ui",
-  "author": "jcook-gresham",
+  "description": "james cook blog",
+  "author": "CookJp",
   "keywords": [
     "gatsby"
   ],
@@ -24,6 +24,9 @@
     "gatsby": "^2.32.3",
     "gatsby-plugin-apollo": "^3.0.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-source-filesystem": "^3.4.0",
+    "gatsby-transformer-remark": "^4.1.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

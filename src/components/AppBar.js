@@ -10,6 +10,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'gatsby';
 // styles
 
 const drawerWidth = 240;
@@ -38,8 +39,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     width: '80%',
     justifyContent: 'space-evenly',
-  },
-  appBarNavItem: {
   },
   drawer: {
     width: drawerWidth,
@@ -93,17 +92,19 @@ const MobileBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <DonutLargeIcon
-            color="primary"
-            fontSize="large"
-          />
-          <Divider
-            orientation="vertical"
-            style={{ width: '2%' }}
-          />
-          <Typography variant="h5" noWrap>
-            James Cook
-          </Typography>
+          <Link to="/" style={{ textDecoration: 'none', display: 'flex' }}>
+            <DonutLargeIcon
+              color="primary"
+              fontSize="large"
+            />
+            <Divider
+              orientation="vertical"
+              style={{ width: '2%' }}
+            />
+            <Typography variant="h5" noWrap>
+              James Cook
+            </Typography>
+          </Link>
           <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
             <Brightness3Icon />
           </IconButton>
@@ -143,15 +144,17 @@ const DesktopBar = () => {
     <div className={classes.root}>
       <MuiAppBar position="static" color="transparent" className={classes.appBar}>
         <Toolbar display="flex">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <DonutLargeIcon color="primary" fontSize="large" />
-          </IconButton>
-          <Typography variant="h3" className={classes.title}>
-            James Cook
-          </Typography>
+          <Link to="/" style={{ textDecoration: 'none', display: 'flex' }}>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <DonutLargeIcon color="primary" fontSize="large" />
+            </IconButton>
+            <Typography variant="h3" className={classes.title}>
+              James Cook
+            </Typography>
+          </Link>
           <div className={classes.appBarNav}>
             {titles.map((text) => (
-              <Typography variant="h6" className={classes.appBarNavItem} key={text}>
+              <Typography variant="h6" key={text}>
                 {text}
               </Typography>
             ))}

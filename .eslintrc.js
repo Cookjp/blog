@@ -41,6 +41,7 @@ module.exports = {
           ['Pages', './src/pages'],
           ['Graphql', './src/graphql'],
           ['Components', './src/components'],
+          ['Types', './src/types'],
         ],
         extensions: ['.js', '.jsx'],
       },
