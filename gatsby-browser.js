@@ -1,13 +1,17 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import AppBar from 'Components/AppBar';
+import AppBar from 'Components/appbar/AppBar';
+
 import ThemeProvider, { FancyBorder } from 'Components/layout/ThemeProvider';
+import { DarkModeProvider } from 'Components/layout/DarkModeProvider';
 
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider>
-    <AppBar />
-    <FancyBorder>
-      {element}
-    </FancyBorder>
-  </ThemeProvider>
+  <DarkModeProvider>
+    <ThemeProvider>
+      <AppBar />
+      <FancyBorder>
+        {element}
+      </FancyBorder>
+    </ThemeProvider>
+  </DarkModeProvider>
 );
