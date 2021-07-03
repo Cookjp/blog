@@ -1,27 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import LayoutProvider from 'Components/layout/LayoutProvider';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#ff2e00',
-    },
-    secondary: {
-      main: '#00BAFF',
-      light: '#B2E7FF',
-    },
-    grey: {
-      main: '#737373',
-      dark: '#DFDFDF',
-      light: '#F4F4F4',
-    },
-  },
-  typography: {
-    fontFamily: ['Oswald', 'sans-serif'],
-  },
-});
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { DarkModeContext } from './DarkModeProvider';
 
 export const FancyBorder = ({ children }) => (
   <Grid container justify="space-between">
@@ -33,12 +15,40 @@ export const FancyBorder = ({ children }) => (
   </Grid>
 );
 
-const ThemeProvider = ({ children }) => (
-  <LayoutProvider>
-    <MuiThemeProvider theme={theme}>
-      {children}
-    </MuiThemeProvider>
-  </LayoutProvider>
-);
+const ThemeProvider = ({ children }) => {
+  const darkModeContext = useContext(DarkModeContext);
+  const { themeType } = darkModeContext;
+
+  const theme = createMuiTheme({
+    palette: {
+      type: themeType,
+      primary: {
+        main: '#ff2e00',
+      },
+      secondary: {
+        main: '#00BAFF',
+        light: '#B2E7FF',
+      },
+      grey: {
+        main: '#737373',
+        dark: '#DFDFDF',
+        light: '#F4F4F4',
+      },
+    },
+    typography: {
+      fontFamily: ['Oswald', 'sans-serif'],
+    },
+  });
+
+  return (
+    <LayoutProvider>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline>
+          {children}
+        </CssBaseline>
+      </MuiThemeProvider>
+    </LayoutProvider>
+  );
+};
 
 export default ThemeProvider;
