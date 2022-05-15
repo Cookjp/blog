@@ -21,7 +21,7 @@ const Theme = ({ children }) => {
 
   const theme = createTheme({
     palette: {
-      type: themeType,
+      mode: themeType,
       primary: {
         main: '#ff2e00',
       },
