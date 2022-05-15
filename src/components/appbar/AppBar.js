@@ -4,13 +4,13 @@ import {
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
-import Brightness3Icon from '@material-ui/icons/Brightness3';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'gatsby';
+import DarkModeToggle from './DarkModeToggle';
 // styles
 
 const drawerWidth = 240;
@@ -105,9 +105,7 @@ const MobileBar = () => {
               James Cook
             </Typography>
           </Link>
-          <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
-            <Brightness3Icon />
-          </IconButton>
+          <DarkModeToggle className={classes.darkMode} />
         </Toolbar>
       </MuiAppBar>
       <Drawer
@@ -159,9 +157,8 @@ const DesktopBar = () => {
               </Typography>
             ))}
           </div>
-          <IconButton edge="start" className={classes.darkMode} color="inherit" aria-label="menu">
-            <Brightness3Icon />
-          </IconButton>
+          <DarkModeToggle className={classes.darkMode} />
+
         </Toolbar>
       </MuiAppBar>
     </div>
