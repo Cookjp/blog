@@ -41,13 +41,13 @@ const Theme = ({ children }) => {
   });
 
   return (
-    <LayoutProvider>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <LayoutProvider>
         <CssBaseline>
           {children}
         </CssBaseline>
-      </ThemeProvider>
-    </LayoutProvider>
+      </LayoutProvider>
+    </ThemeProvider>
   );
 };
 
