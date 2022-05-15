@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Box,
   Typography,
-} from '@material-ui/core';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+} from '@mui/material';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import PropTypes, { string } from 'prop-types';
 
 const Tags = ({ tags, className }) => (

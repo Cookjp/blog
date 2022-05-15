@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  Box, Divider, makeStyles, Typography,
-} from '@material-ui/core';
+import { Box, Divider, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { postType } from 'Types';
 import Tags from './Tags';
 

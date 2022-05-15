@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import Intro from 'Components/Intro';
 import PostList from 'Components/PostList';
 import { graphql } from 'gatsby';
@@ -21,7 +22,7 @@ const Home = ({ data }) => {
   return (
     <Grid
       container
-      justify="space-evenly"
+      justifyContent="space-evenly"
       alignItems="flex-start"
       className={classes.main}
       spacing={10}
