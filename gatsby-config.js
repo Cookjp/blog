@@ -6,6 +6,20 @@ module.exports = {
     description: 'Software development and personal blog',
   },
   plugins: [
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
@@ -19,6 +33,13 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    },
+
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
