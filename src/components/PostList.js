@@ -1,5 +1,6 @@
 import React from 'react';
-import { Divider, makeStyles, Typography } from '@material-ui/core';
+import { Divider, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import PropTypes from 'prop-types';
 import { postType } from 'Types';
 import { Link } from 'gatsby';

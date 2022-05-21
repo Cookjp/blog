@@ -1,14 +1,22 @@
 import {
-  AppBar as MuiAppBar, Divider, Drawer, IconButton, List,
-  makeStyles, Toolbar, Typography, useMediaQuery, useTheme,
-} from '@material-ui/core';
+  AppBar as MuiAppBar,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
-import DonutLargeIcon from '@material-ui/icons/DonutLarge';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'gatsby';
 import DarkModeToggle from './DarkModeToggle';
 // styles
@@ -89,6 +97,7 @@ const MobileBar = () => {
             aria-label="open drawer"
             onClick={(event) => toggleDrawer(event, true)}
             edge="start"
+            size="large"
           >
             <MenuIcon />
           </IconButton>
@@ -118,7 +127,7 @@ const MobileBar = () => {
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={(event) => toggleDrawer(event, false)}>
+          <IconButton onClick={(event) => toggleDrawer(event, false)} size="large">
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
@@ -143,7 +152,13 @@ const DesktopBar = () => {
       <MuiAppBar position="static" color="transparent" className={classes.appBar}>
         <Toolbar display="flex">
           <Link to="/" style={{ textDecoration: 'none', display: 'flex' }}>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              size="large"
+            >
               <DonutLargeIcon color="primary" fontSize="large" />
             </IconButton>
             <Typography variant="h3" className={classes.title}>

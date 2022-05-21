@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Grid } from '@mui/material';
 import LayoutProvider from 'Components/layout/LayoutProvider';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from '@mui/material/CssBaseline';
 import { DarkModeContext } from './DarkModeProvider';
 
 export const FancyBorder = ({ children }) => (
@@ -15,13 +15,13 @@ export const FancyBorder = ({ children }) => (
   </Grid>
 );
 
-const ThemeProvider = ({ children }) => {
+const Theme = ({ children }) => {
   const darkModeContext = useContext(DarkModeContext);
   const { themeType } = darkModeContext;
 
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
-      type: themeType,
+      mode: themeType,
       primary: {
         main: '#ff2e00',
       },
@@ -42,13 +42,13 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <LayoutProvider>
-      <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline>
           {children}
         </CssBaseline>
-      </MuiThemeProvider>
+      </ThemeProvider>
     </LayoutProvider>
   );
 };
 
-export default ThemeProvider;
+export default Theme;
