@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: 'James Cook Blog',
     description: 'Software development and personal blog',
@@ -14,7 +17,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 800,
+              maxWidth: 2000,
             },
           },
         ],
@@ -36,11 +39,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-
-    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-root-import',

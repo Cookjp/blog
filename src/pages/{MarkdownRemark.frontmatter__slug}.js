@@ -1,17 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { postType } from 'Types';
+import makeStyles from '@mui/styles/makeStyles';
+
+const useStyles = makeStyles({
+  container: {
+    width: '80%',
+    margin: 'auto',
+  },
+  blogPost: {
+    width: '50%',
+  },
+  markdown: {
+    width: '80%',
+  },
+});
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+
+  const classes = useStyles();
+
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
+    <div className={classes.container}>
+      <div className={classes.blogPost}>
         <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <h4>{frontmatter.date}</h4>
         <div
-          className="blog-post-content"
+          className={classes.markdown}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

@@ -37,6 +37,9 @@
     "react-helmet": "^6.1.0",
     "react-router": "^5.2.0"
   },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
     "babel-jest": "^26.6.3",
