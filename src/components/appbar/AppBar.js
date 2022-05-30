@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const titles = ['Blog', 'TIL', 'About'];
+const titles = [];
 
 const AppBar = () => {
   const matches = useMediaQuery((theme) => theme.breakpoints.up('md'));

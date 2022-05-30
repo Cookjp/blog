@@ -45,7 +45,7 @@ const Intro = () => {
       </Typography>
       <Typography variant="h6">
         I like to write about software engineering, personal development
-        and my own philosophical and mental experiences.
+        and my own experiences.
       </Typography>
     </div>
   );
