@@ -1,6 +1,7 @@
+import React from 'react';
 import { Box, Divider, Typography } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import React from 'react';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
   divider: {
@@ -9,10 +10,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     width: '60%',
   },
+  animationWidthX: {
+    animation: `$widthX 2000ms ${theme.transitions.easing.easeInOut}`,
+  },
+  '@keyframes widthX': {
+    '0%': {
+      width: 0,
+    },
+    '100%': {
+      width: '60%',
+    },
+  },
 }));
 
 const Intro = () => {
   const classes = useStyles();
+
   return (
     <div>
       <Typography variant="h6">
@@ -23,7 +36,7 @@ const Intro = () => {
           James Cook
         </Box>
       </Typography>
-      <Divider className={classes.divider} />
+      <Divider className={clsx(classes.divider, classes.animationWidthX)} />
       <Typography variant="h6">
         and I&apos;m a
       </Typography>
