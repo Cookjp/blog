@@ -35,6 +35,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const boxStyles = [{
+  boxShadow: 1,
+  borderRadius: 2,
+  p: 2,
+  mt: 2,
+},
+{
+  '&:hover': {
+    boxShadow: 3,
+  },
+},
+];
+
 const months = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -48,7 +61,7 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <>
+    <Box sx={boxStyles}>
       <div className={classes.titleAndDate}>
         <Typography variant="h5">
           <Box fontWeight="fontWeightBold">
@@ -73,7 +86,7 @@ const PostCard = ({ post }) => {
       <Typography>
         {frontmatter.description}
       </Typography>
-    </>
+    </Box>
   );
 };
 
