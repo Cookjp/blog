@@ -1,12 +1,10 @@
 import React from 'react';
 import './layout.css';
-import Coffee from 'Components/BuyMeACoffee';
 
-export default function Layout({ children }) {
+export default function LayoutProvider({ children }) {
   return (
     <>
       <div>{children}</div>
-      <Coffee />
     </>
   );
 }

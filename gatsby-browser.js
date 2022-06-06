@@ -4,6 +4,8 @@ import AppBar from 'Components/appbar/AppBar';
 
 import ThemeProvider, { FancyBorder } from 'Components/layout/ThemeProvider';
 import { DarkModeProvider } from 'Components/layout/DarkModeProvider';
+import { AnimatePresence } from 'framer-motion';
+import Coffee from 'Components/BuyMeACoffee';
 
 const ReactDOM = require('react-dom');
 
@@ -14,13 +16,20 @@ export const replaceHydrateFunction = () => (element, container, callback) => {
   ReactDOM.render(element, container, callback);
 };
 
+export const wrapPageElement = ({ element }) => (
+  <FancyBorder>
+    <AnimatePresence exitBeforeEnter>
+      {element}
+    </AnimatePresence>
+    <Coffee />
+  </FancyBorder>
+);
+
 export const wrapRootElement = ({ element }) => (
   <DarkModeProvider>
     <ThemeProvider>
       <AppBar />
-      <FancyBorder>
-        {element}
-      </FancyBorder>
+      {element}
     </ThemeProvider>
   </DarkModeProvider>
 );

@@ -1,25 +1,14 @@
 import React from 'react';
 import { Box, Divider, Typography } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
   divider: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     backgroundColor: theme.palette.primary.main,
-    width: '60%',
-  },
-  animationWidthX: {
-    animation: `$widthX 2000ms ${theme.transitions.easing.easeInOut}`,
-  },
-  '@keyframes widthX': {
-    '0%': {
-      width: 0,
-    },
-    '100%': {
-      width: '60%',
-    },
+    width: '65%',
   },
 }));
 
@@ -36,7 +25,16 @@ const Intro = () => {
           James Cook
         </Box>
       </Typography>
-      <Divider className={clsx(classes.divider, classes.animationWidthX)} />
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: '100%' }}
+        transition={{
+          duration: 1,
+          delay: 1.5,
+        }}
+      >
+        <Divider className={classes.divider} />
+      </motion.div>
       <Typography variant="h6">
         and I&apos;m a
       </Typography>

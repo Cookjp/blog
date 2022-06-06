@@ -44,6 +44,7 @@ const boxStyles = [{
 {
   '&:hover': {
     boxShadow: 3,
+    transition: '0.5s',
   },
 },
 ];
