@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const TRANSITION_DURATION = 0.5;
+
 const PageTransition = ({ children, key }) => (
   <motion.main
     key={key}
@@ -9,11 +11,12 @@ const PageTransition = ({ children, key }) => (
     exit={{ opacity: 0, x: 300 }}
     transition={{
       type: 'tween',
-      duration: 0.5,
+      duration: TRANSITION_DURATION,
     }}
   >
     {children}
   </motion.main>
 );
 
+export { TRANSITION_DURATION };
 export default PageTransition;
