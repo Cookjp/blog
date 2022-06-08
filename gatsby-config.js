@@ -24,12 +24,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-apollo',
-      options: {
-        uri: 'https://example.com/graphql',
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown',
