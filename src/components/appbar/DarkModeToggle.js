@@ -7,19 +7,22 @@ import { DarkModeContext } from '../layout/DarkModeProvider';
 const DarkModeToggle = () => {
   const darkModeContext = useContext(DarkModeContext);
   const { themeType, LIGHT_TYPE } = darkModeContext;
-  return <>
-    <IconButton
-      edge="start"
-      color="inherit"
-      aria-label="dark-mode"
-      onClick={() => {
-        darkModeContext.toggle();
-      }}
-      size="large">
-      {themeType === LIGHT_TYPE
-        ? <SunIcon /> : <MoonIcon /> }
-    </IconButton>
-  </>;
+  return (
+    <>
+      <IconButton
+        edge="end"
+        color="inherit"
+        aria-label="dark-mode"
+        onClick={() => {
+          darkModeContext.toggle();
+        }}
+        size="large"
+      >
+        {themeType === LIGHT_TYPE
+          ? <SunIcon /> : <MoonIcon /> }
+      </IconButton>
+    </>
+  );
 };
 
 export default DarkModeToggle;

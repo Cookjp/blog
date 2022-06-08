@@ -15,6 +15,38 @@ export const FancyBorder = ({ children }) => (
   </Grid>
 );
 
+const lightTheme = {
+
+  primary: {
+    main: '#ff2e00',
+  },
+  secondary: {
+    main: '#00BAFF',
+    light: '#B2E7FF',
+  },
+  grey: {
+    light: '#F4F4F4',
+  },
+};
+
+const darkTheme = {
+  background: {
+    default: 'rgb(68,68,68)',
+    paper: 'rgb(82,82,82)',
+  },
+  primary: {
+    main: '#ff2e00',
+  },
+  secondary: {
+    main: '#00BAFF',
+    light: '#B2E7FF',
+  },
+  grey: {
+    main: '#737373',
+    light: '#F4F4F4',
+  },
+};
+
 const Theme = ({ children }) => {
   const darkModeContext = useContext(DarkModeContext);
   const { themeType } = darkModeContext;
@@ -22,18 +54,7 @@ const Theme = ({ children }) => {
   const theme = createTheme({
     palette: {
       mode: themeType,
-      primary: {
-        main: '#ff2e00',
-      },
-      secondary: {
-        main: '#00BAFF',
-        light: '#B2E7FF',
-      },
-      grey: {
-        main: '#737373',
-        dark: '#DFDFDF',
-        light: '#F4F4F4',
-      },
+      ...(themeType === 'light' ? lightTheme : darkTheme),
     },
     typography: {
       fontFamily: ['Oswald', 'sans-serif'],

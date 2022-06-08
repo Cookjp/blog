@@ -64,4 +64,5 @@ const DarkModeProvider = ({ children }) => {
 export {
   DarkModeContext,
   DarkModeProvider,
+  LIGHT_TYPE, DARK_TYPE,
 };

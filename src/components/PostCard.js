@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Divider, Typography } from '@mui/material';
+import {
+  Box, Divider, Paper, Typography,
+} from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { postType } from 'Types';
 import Tags from './Tags';
@@ -62,7 +64,7 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <Box sx={boxStyles}>
+    <Paper sx={boxStyles}>
       <div className={classes.titleAndDate}>
         <Typography variant="h5">
           <Box fontWeight="fontWeightBold">
@@ -87,7 +89,7 @@ const PostCard = ({ post }) => {
       <Typography>
         {frontmatter.description}
       </Typography>
-    </Box>
+    </Paper>
   );
 };
 
