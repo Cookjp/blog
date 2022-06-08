@@ -44,9 +44,9 @@ const useResetPreference = (preferredType, reset) => {
 };
 
 const DarkModeProvider = ({ children }) => {
-  const preferredType = useMediaQuery('(prefers-color-scheme: dark)', { noSsr: true })
-    ? DARK_TYPE
-    : LIGHT_TYPE;
+  const preferredType = useMediaQuery('(prefers-color-scheme: light)', { noSsr: true })
+    ? LIGHT_TYPE
+    : DARK_TYPE;
 
   const [themeType, { toggle, reset }] = useToggleThemeType(preferredType);
   useResetPreference(preferredType, reset);
