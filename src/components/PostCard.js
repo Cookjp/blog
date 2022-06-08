@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box, Divider, Paper, Typography,
+  Box, Divider, Card, Typography, CardActionArea,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { postType } from 'Types';
@@ -37,20 +37,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const boxStyles = [{
-  boxShadow: 1,
-  borderRadius: 2,
-  p: 2,
-  mt: 2,
-},
-{
-  '&:hover': {
-    boxShadow: 3,
-    transition: '0.5s',
-  },
-},
-];
-
 const months = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -64,32 +50,34 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <Paper sx={boxStyles}>
-      <div className={classes.titleAndDate}>
-        <Typography variant="h5">
-          <Box fontWeight="fontWeightBold">
-            {frontmatter.title}
-          </Box>
-        </Typography>
-        <div className={classes.dateAndReadTime}>
-          <Typography variant="subtitle2">
-            <Box fontStyle="oblique">
-              {`${timeToRead} min read`}
+    <Card sx={{ borderRadius: 2, mt: 2 }}>
+      <CardActionArea sx={{ p: 2 }}>
+        <div className={classes.titleAndDate}>
+          <Typography variant="h5">
+            <Box fontWeight="fontWeightBold">
+              {frontmatter.title}
             </Box>
           </Typography>
-          <Typography variant="body1" className={classes.date}>
-            {date()}
-          </Typography>
+          <div className={classes.dateAndReadTime}>
+            <Typography variant="subtitle2">
+              <Box fontStyle="oblique">
+                {`${timeToRead} min read`}
+              </Box>
+            </Typography>
+            <Typography variant="body1" className={classes.date}>
+              {date()}
+            </Typography>
+          </div>
         </div>
-      </div>
-      <Divider className={classes.divider} />
-      {frontmatter.tags
-        ? <Tags tags={frontmatter.tags} className={classes.tags} />
-        : <Box m={3} /> }
-      <Typography>
-        {frontmatter.description}
-      </Typography>
-    </Paper>
+        <Divider className={classes.divider} />
+        {frontmatter.tags
+          ? <Tags tags={frontmatter.tags} className={classes.tags} />
+          : <Box m={3} /> }
+        <Typography>
+          {frontmatter.description}
+        </Typography>
+      </CardActionArea>
+    </Card>
   );
 };
 
