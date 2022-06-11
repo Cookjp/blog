@@ -4,15 +4,20 @@ import { postType } from 'Types';
 import makeStyles from '@mui/styles/makeStyles';
 import PageTransition from 'Components/layout/PageTransition';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container: {
-    width: '80%',
     margin: 'auto',
+    '& h2, h1': {
+      color: theme.palette.secondary.main,
+    },
+    '& h4': {
+      color: theme.palette.secondary.main,
+    },
   },
   markdown: {
     width: '80%',
   },
-});
+}));
 
 const Template = ({ data }) => {
   const { markdownRemark } = data;
@@ -25,7 +30,15 @@ const Template = ({ data }) => {
       <div className={classes.container}>
         <div>
           <h1>{frontmatter.title}</h1>
-          <h4>{frontmatter.date}</h4>
+          <h4>
+            by
+            {' '}
+            <b>James Cook</b>
+            {' '}
+            on
+            {' '}
+            {frontmatter.date}
+          </h4>
           <div
             className={classes.markdown}
             dangerouslySetInnerHTML={{ __html: html }}

@@ -21,11 +21,7 @@ const lightTheme = {
     main: '#ff2e00',
   },
   secondary: {
-    main: '#00BAFF',
-    light: '#B2E7FF',
-  },
-  grey: {
-    light: '#F4F4F4',
+    main: '#19483d',
   },
 };
 
@@ -38,12 +34,7 @@ const darkTheme = {
     main: '#ff2e00',
   },
   secondary: {
-    main: '#00BAFF',
-    light: '#B2E7FF',
-  },
-  grey: {
-    main: '#737373',
-    light: '#F4F4F4',
+    main: '#48d3b4',
   },
 };
 

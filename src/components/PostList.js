@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   dateDivider: {
     marginRight: theme.spacing(5),
     marginBottom: theme.spacing(3),
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.main,
   },
 }));
 
