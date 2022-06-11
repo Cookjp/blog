@@ -23,7 +23,7 @@ const Intro = () => {
       </Typography>
       <Typography variant="h2">
         <Box fontWeight="fontWeightBold">
-          James Cook
+          James Edwards-Cook
         </Box>
       </Typography>
       <motion.div
