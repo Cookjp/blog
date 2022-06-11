@@ -45,7 +45,7 @@ const PostList = ({ posts }) => {
   const isDifferentYear = (post1, post2) => new Date(post1.node.frontmatter.date).getFullYear()
     !== new Date(post2.node.frontmatter.date).getFullYear();
 
-  const map1 = (post, index) => {
+  const renderPosts = (post, index) => {
     const isNewYear = index !== 0 ? isDifferentYear(post, postList[index - 1]) : true;
     return (
       <div key={post.node.id}>
@@ -63,7 +63,7 @@ const PostList = ({ posts }) => {
     );
   };
   return (
-    postList.map(map1)
+    postList.map(renderPosts)
   );
 };
 

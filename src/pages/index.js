@@ -6,6 +6,7 @@ import PostList from 'Components/PostList';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { postType } from 'Types';
+import PageTransition from 'Components/layout/PageTransition';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -20,22 +21,24 @@ const Home = ({ data }) => {
   const classes = useStyles();
   const { allMarkdownRemark: { edges } } = data;
   return (
-    <Grid
-      container
-      justifyContent="space-evenly"
-      alignItems="flex-start"
-      className={classes.main}
-      spacing={10}
-    >
-      <Grid item xs={12} sm={6}>
-        <Intro />
+    <PageTransition key="Home">
+      <Grid
+        container
+        justifyContent="space-evenly"
+        alignItems="flex-start"
+        className={classes.main}
+        spacing={10}
+      >
+        <Grid item xs={12} sm={6}>
+          <Intro />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <div className={classes.postList}>
+            <PostList posts={edges} />
+          </div>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <div className={classes.postList}>
-          <PostList posts={edges} />
-        </div>
-      </Grid>
-    </Grid>
+    </PageTransition>
   );
 };
 

@@ -1,9 +1,10 @@
 ---
-slug: "/blog/my-first-post"
-date: "2019-05-04"
-title: "My first blog post"
-description: "Sup Nerd"
-tags: [ Martin D'vlope, Developer, Elite]
+slug: "/blog/best-junior-developer"
+date: "2022-05-15"
+title: "How to be a great junior developer"
+description: "Some concrete tips on how to be the best junior dev you can be"
+tags: [Developer]
 
 ---
 ## Hello
+![Hopper The Rabbit](../images/bmc-button.png)

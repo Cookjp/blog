@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Divider, Typography } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import bmc from 'Images/bmc-button.png';
 

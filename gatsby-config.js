@@ -1,11 +1,28 @@
 const path = require('path');
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: 'James Cook Blog',
     description: 'Software development and personal blog',
   },
   plugins: [
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 2000,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
@@ -19,7 +36,13 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-root-import',

@@ -3,7 +3,7 @@ import {
   Divider,
   Drawer,
   IconButton,
-  List,
+  List, Paper,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
     justifyContent: 'space-evenly',
   },
+  mobileAppBarNav: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -63,12 +67,17 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
   },
+  mobileTitle: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+  },
 }));
 
-const titles = ['Blog', 'TIL', 'About'];
+const titles = [];
 
 const AppBar = () => {
-  const matches = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const matches = useMediaQuery((theme) => theme.breakpoints.up('sm'));
   return matches ? <DesktopBar /> : <MobileBar />;
 };
 
@@ -85,34 +94,40 @@ const MobileBar = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <Paper className={classes.root}>
       <MuiAppBar
         position="static"
         color="transparent"
         display="flex"
       >
-        <Toolbar>
+        <Toolbar className={classes.mobileAppBarNav}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={(event) => toggleDrawer(event, true)}
             edge="start"
             size="large"
+            float="left"
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" style={{ textDecoration: 'none', display: 'flex' }}>
-            <DonutLargeIcon
-              color="primary"
-              fontSize="large"
-            />
-            <Divider
-              orientation="vertical"
-              style={{ width: '2%' }}
-            />
-            <Typography variant="h5" noWrap>
-              James Cook
-            </Typography>
+          <Link
+            to="/"
+            style={{ textDecoration: 'none', width: '100%' }}
+          >
+            <div className={classes.mobileTitle}>
+              <DonutLargeIcon
+                color="primary"
+                fontSize="large"
+              />
+              <Divider
+                orientation="vertical"
+                style={{ width: '2%' }}
+              />
+              <Typography variant="h5">
+                James Cook
+              </Typography>
+            </div>
           </Link>
           <DarkModeToggle className={classes.darkMode} />
         </Toolbar>
@@ -140,7 +155,7 @@ const MobileBar = () => {
           ))}
         </List>
       </Drawer>
-    </div>
+    </Paper>
   );
 };
 
@@ -148,7 +163,7 @@ const DesktopBar = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Paper className={classes.root}>
       <MuiAppBar position="static" color="transparent" className={classes.appBar}>
         <Toolbar display="flex">
           <Link to="/" style={{ textDecoration: 'none', display: 'flex' }}>
@@ -176,7 +191,7 @@ const DesktopBar = () => {
 
         </Toolbar>
       </MuiAppBar>
-    </div>
+    </Paper>
   );
 };
 
