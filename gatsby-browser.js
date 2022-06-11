@@ -7,6 +7,8 @@ import { DarkModeProvider } from 'Components/layout/DarkModeProvider';
 import { AnimatePresence } from 'framer-motion';
 import Coffee from 'Components/BuyMeACoffee';
 import { TRANSITION_DURATION } from 'Components/layout/PageTransition';
+import { Helmet } from 'react-helmet';
+import Logo from 'Images/icon.png';
 
 const ReactDOM = require('react-dom');
 
@@ -37,6 +39,11 @@ export const wrapPageElement = ({ element }) => (
 export const wrapRootElement = ({ element }) => (
   <DarkModeProvider>
     <ThemeProvider>
+      <Helmet>
+        <title>James Edwards-Cook</title>
+        <meta name="James Edwards-Cook" />
+        <link rel="icon" type="image/png" href={Logo} sizes="32x32" />
+      </Helmet>
       <AppBar />
       {element}
     </ThemeProvider>

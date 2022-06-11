@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
-import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+import LogoTransparent from 'Images/icon_transparent.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     width: '20%',
     whiteSpace: 'nowrap',
+    alignSelf: 'center',
   },
   appBarNav: {
     display: 'flex',
@@ -116,16 +117,13 @@ const MobileBar = () => {
             style={{ textDecoration: 'none', width: '100%' }}
           >
             <div className={classes.mobileTitle}>
-              <DonutLargeIcon
-                color="primary"
-                fontSize="large"
-              />
+              <img src={LogoTransparent} alt="Logo" width="30" height="30" />
               <Divider
                 orientation="vertical"
                 style={{ width: '2%' }}
               />
               <Typography variant="h5">
-                James Cook
+                James Edwards-Cook
               </Typography>
             </div>
           </Link>
@@ -174,10 +172,10 @@ const DesktopBar = () => {
               aria-label="menu"
               size="large"
             >
-              <DonutLargeIcon color="primary" fontSize="large" />
+              <img src={LogoTransparent} alt="Logo" width="50" height="50" />
             </IconButton>
             <Typography variant="h3" className={classes.title}>
-              James Cook
+              James Edwards-Cook
             </Typography>
           </Link>
           <div className={classes.appBarNav}>
