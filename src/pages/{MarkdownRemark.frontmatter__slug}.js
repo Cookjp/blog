@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
   markdown: {
     width: '80%',
+    fontSize: '1.2em',
+  },
+  p: {
+    fontSize: '1.2em',
   },
 }));
 
